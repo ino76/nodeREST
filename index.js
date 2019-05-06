@@ -17,5 +17,8 @@ db.on('error', (err) => console.log(err))
 
 db.once('open', () => {
     require('./routes/customers')(server)
+    console.log(`ENV: ${config.ENV}`)
+    console.log(`URL: ${config.URL}`)
+    console.log(`MONGODB_URI: ${config.MONGODB_URI}`)
     console.log(`Server started on port ${config.PORT}`)
 })
